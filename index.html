@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcantia - Acasă</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Georgia&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1 class="site-title">Arcantia</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Acasă</a></li>
+                <li><a href="produse.html">Produse</a></li>
+                <li><a href="horoscop.html">Horoscop</a></li>
+                <li><a href="citirea_zilei.html">Citirea Zilei</a></li>
+                <li><a href="despre_noi.html">Despre Noi</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cos.html">Coș (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- SLIDE 1 -->
+                <div class="swiper-slide">
+                    <h2>
+<br> Bun venit în universul misterelor Arcantia!</h2>
+                    <p>Descoperă universul misterios al Arcantia, librăria esoterică unde cunoașterea ancestrală prinde viață. </p>
+                    <a href="produse.html" class="button-link">Explorează Colecția</a>
+                </div>
+                <!-- SLIDE 2 -->
+                <div class="swiper-slide">
+                    <h2>
+<br>Horoscopul Zilei</h2>
+                    <p>
+
+<br>                    
+Află ce îți rezervă astrele astăzi. Perspective și sfaturi pentru fiecare zodie.
+
+</p>
+                    <a href="horoscop.html" class="button-link">Vezi Horoscopul</a>
+                </div>
+                <!-- SLIDE 3 -->
+                <div class="swiper-slide">
+                    <h2>
+<br> Citirea Zilei</h2>
+                    <p>
+<br>
+<br>
+Extrage o carte de tarot și primește un mesaj ghid pentru ziua de azi.</p>
+                    <a href="citirea_zilei.html" class="button-link">Descoperă Cartea Zilei</a>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+
+        <div class="container">
+            <section id="produse-recomandate">
+                <h2>Produse Recomandate</h2>
+                <div id="recomandate-container">
+                    <p>Se încarcă produsele recomandate...</p>
+                </div>
+            </section>
+
+            <section id="articole-relevante">
+                <h2>Articole Relevante din Lumea Esoterică</h2>
+                <div class="articole-container">
+                    <div class="articol-card">
+                        <img src="images/articol-tarot-arcane.jpg" alt="Arcane Majore Tarot">
+                        <h3>Inițiere în Tarot: Semnificația Arcanelor Majore</h3>
+                        <p>Descoperă simbolismul profund al primelor 22 de cărți din pachetul de tarot...</p>
+                        <a href="#">Citește mai mult...</a>
+                    </div>
+                    <div class="articol-card">
+                        <img src="images/articol-cristale-vindecatoare.jpg" alt="Cristale Vindecatoare">
+                        <h3>Cristalele și Puterea lor Vindecătoare</h3>
+                        <p>O introducere în lumea fascinantă a cristalelor...</p>
+                        <a href="#">Citește mai mult...</a>
+                    </div>
+                    <div class="articol-card">
+                        <img src="images/articol-faze-luna.jpg" alt="Fazele Lunii">
+                        <h3>Fazele Lunii și Influența lor Asupra Noastră</h3>
+                        <p>Înțelege cum ciclurile lunare îți pot afecta energia...</p>
+                        <a href="#">Citește mai mult...</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Arcantia - Librărie Esoterică. Toate drepturile rezervate.</p>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

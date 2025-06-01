@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcantia - Contact</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Georgia&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1 class="site-title">Arcantia</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Acasă</a></li>
+                <li><a href="produse.html">Produse</a></li>
+                <li><a href="horoscop.html">Horoscop</a></li>
+                <li><a href="citirea_zilei.html">Citirea Zilei</a></li>
+                <li><a href="despre_noi.html">Despre Noi</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cos.html">Coș (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Contactează-ne</h2>
+            <div class="contact-container">
+                <div class="form-container">
+                    <h3>Trimite-ne un mesaj</h3>
+                    <form id="contact-form">
+                        <div>
+                            <label for="nume">Nume:</label>
+                            <input type="text" id="nume" name="nume" required>
+                        </div>
+                        <div>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div>
+                            <label for="subiect">Subiect:</label>
+                            <input type="text" id="subiect" name="subiect">
+                        </div>
+                        <div>
+                            <label for="mesaj">Mesaj:</label>
+                            <textarea id="mesaj" name="mesaj" rows="6" required></textarea>
+                        </div>
+                        <button type="submit">Trimite Mesajul</button>
+                    </form>
+                </div>
+                <div class="map-container">
+                    <h3>Unde ne găsești</h3>
+                    <p>Vino să ne vizitezi în inima misterioasă a Timișoarei (locație fictivă):</p>
+                    <p>Strada Umbrelor Mistice, Nr. 13, Timișoara</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d89078.39375782917!2d21.15450781980784!3d45.75372041857808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4745677dcb0fbbf5%3A0x400def369ef5080!2sTimi%C8%99oara!5e0!3m2!1sro!2sro!4v1678886030759!5m2!1sro!2sro" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Arcantia - Librărie Esoterică. Toate drepturile rezervate.</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

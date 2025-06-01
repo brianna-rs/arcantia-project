@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<carti>
+    <carte>
+        <titlu>Ghidul Tarotului pentru Începători</titlu>
+        <autor>Lisa Chamberlain</autor>
+        <gen>tarot</gen>
+        <an>2021</an>
+        <stoc>35</stoc>
+        <pret>55</pret>
+    </carte>
+    <carte>
+        <titlu>Secretele Cărților Oracol</titlu>
+        <autor>Colette Baron-Reid</autor>
+        <gen>divinație</gen>
+        <an>2020</an>
+        <stoc>30</stoc>
+        <pret>79</pret>
+    </carte>
+    <carte>
+        <titlu>Kabbalah și Tarotul</titlu>
+        <autor>Robert Wang</autor>
+        <gen>ezoterism</gen>
+        <an>2008</an>
+        <stoc>15</stoc>
+        <pret>99</pret>
+    </carte>
+    <carte>
+        <titlu>Astrologie pentru suflet</titlu>
+        <autor>Jan Spiller</autor>
+        <gen>astrologie</gen>
+        <an>1997</an>
+        <stoc>50</stoc>
+        <pret>89</pret>
+    </carte>
+    <carte>
+        <titlu>Tarotul și Calea Eroinei</titlu>
+        <autor>Sallie Nichols</autor>
+        <gen>psihologie ezoterică</gen>
+        <an>1980</an>
+        <stoc>10</stoc>
+        <pret>69</pret>
+    </carte>
+    <carte>
+        <titlu>Puterea Lunii</titlu>
+        <autor>Yasmin Boland</autor>
+        <gen>spiritualitate</gen>
+        <an>2019</an>
+        <stoc>80</stoc>
+        <pret>39</pret>
+    </carte>
+    <carte>
+        <titlu>Numerologia destinului</titlu>
+        <autor>Dan Millman</autor>
+        <gen>numerologie</gen>
+        <an>2011</an>
+        <stoc>10</stoc>
+        <pret>99</pret>
+    </carte>
+    <carte>
+        <titlu>Vindecarea Chakrelor</titlu>
+        <autor>Anodea Judith</autor>
+        <gen>energie subtilă</gen>
+        <an>2004</an>
+        <stoc>5</stoc>
+        <pret>150</pret>
+    </carte>
+    <carte>
+        <titlu>Arhetipurile: Calea către Sine</titlu>
+        <autor>Caroline Myss</autor>
+        <gen>dezvoltare spirituală</gen>
+        <an>2013</an>
+        <stoc>70</stoc>
+        <pret>25</pret>
+    </carte>
+    <carte>
+        <titlu>Cartea Umbrei</titlu>
+        <autor>Silver RavenWolf</autor>
+        <gen>magie albă</gen>
+        <an>1998</an>
+        <stoc>90</stoc>
+        <pret>79</pret>
+    </carte>
+</carti>

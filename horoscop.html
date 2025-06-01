@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcantia - Horoscop Zilnic</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Georgia&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1 class="site-title">Arcantia</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Acasă</a></li>
+                <li><a href="produse.html">Produse</a></li>
+                <li><a href="horoscop.html">Horoscop</a></li>
+                <li><a href="citirea_zilei.html">Citirea Zilei</a></li>
+                <li><a href="despre_noi.html">Despre Noi</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cos.html">Coș (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Horoscopul Zilei</h2>
+            <p>Descoperă ce îți rezervă astrele astăzi. Află mesajul specific pentru zodia ta!</p>
+            <div class="zodiac-grid">
+
+                <!-- Zodia Berbec -->
+                <div class="zodie-card">
+                    <img src="images/zodie-berbec.jpg" alt="Berbec">
+                    <h3>Berbec</h3>
+                    <input type="checkbox" id="reveal-berbec" class="horoscope-toggle-checkbox">
+                    <label for="reveal-berbec" class="horoscope-toggle-label button-link">Află Mesajul</label>
+                    <div class="horoscope-message">
+                        <p>Energie debordantă azi! Canalizeaz-o spre proiecte noi și nu te teme să îți asumi riscuri calculate. Oportunități neașteptate pot apărea.</p>
+                    </div>
+                </div>
+
+                <!-- Zodia Taur -->
+                <div class="zodie-card">
+                    <img src="images/zodie-taur.jpg" alt="Taur">
+                    <h3>Taur</h3>
+                    <input type="checkbox" id="reveal-taur" class="horoscope-toggle-checkbox">
+                    <label for="reveal-taur" class="horoscope-toggle-label button-link">Află Mesajul</label>
+                    <div class="horoscope-message">
+                        <p>Este o zi bună pentru introspecție și planificare financiară. Confortul casei tale îți aduce liniște. Evită deciziile impulsive.</p>
+                    </div>
+                </div>
+
+                <!-- Zodia Gemeni -->
+                <div class="zodie-card">
+                    <img src="images/zodie-gemeni.jpg" alt="Gemeni">
+                    <h3>Gemeni</h3>
+                    <input type="checkbox" id="reveal-gemeni" class="horoscope-toggle-checkbox">
+                    <label for="reveal-gemeni" class="horoscope-toggle-label button-link">Află Mesajul</label>
+                    <div class="horoscope-message">
+                        <p>Comunicarea este cheia azi. Exprimă-ți ideile clar și ascultă cu atenție. Poți rezolva o neînțelegere mai veche.</p>
+                    </div>
+                </div>
+                
+                <!-- Zodia Rac -->
+                <div class="zodie-card">
+                    <img src="images/zodie-rac.jpg" alt="Rac">
+                    <h3>Rac</h3>
+                    <input type="checkbox" id="reveal-rac" class="horoscope-toggle-checkbox">
+                    <label for="reveal-rac" class="horoscope-toggle-label button-link">Află Mesajul</label>
+                    <div class="horoscope-message">
+                        <p>Emoțiile sunt intense. Acordă atenție intuiției tale, te poate ghida corect. Petrece timp cu cei dragi pentru echilibru.</p>
+                    </div>
+                </div>
+
+                <!-- Zodia Leu -->
+                <div class="zodie-card">
+                    <img src="images/zodie-leu.jpg" alt="Leu">
+                    <h3>Leu</h3>
+                    <input type="checkbox" id="reveal-leu" class="horoscope-toggle-checkbox">
+                    <label for="reveal-leu" class="horoscope-toggle-label button-link">Află Mesajul</label>
+                    <div class="horoscope-message">
+                        <p>Creativitatea ta atinge cote maxime. Este momentul să strălucești și să îți pui în valoare talentele. Fii generos cu laudele.</p>
+                    </div>
+                </div>
+
+                <!-- Zodia Fecioară -->
+                <div class="zodie-card">
+                    <img src="images/zodie-fecioara.jpg" alt="Fecioară">
+                    <h3>Fecioară</h3>
+                    <input type="checkbox" id="reveal-fecioara" class="horoscope-toggle-checkbox">
+                    <label for="reveal-fecioara" class="horoscope-toggle-label button-link">Află Mesajul</label>
+                    <div class="horoscope-message">
+                        <p>Organizarea și atenția la detalii te ajută să finalizezi sarcini importante. Nu neglija micile plăceri ale vieții.</p>
+                    </div>
+                </div>
+
+                <!-- Zodia Balanță -->
+                <div class="zodie-card">
+                    <img src="images/zodie-balanta.jpg" alt="Balanță">
+                    <h3>Balanță</h3>
+                    <input type="checkbox" id="reveal-balanta" class="horoscope-toggle-checkbox">
+                    <label for="reveal-balanta" class="horoscope-toggle-label button-link">Află Mesajul</label>
+                    <div class="horoscope-message">
+                        <p>Relațiile sunt în prim-plan. Caută armonia și echilibrul în interacțiunile tale. O discuție importantă poate aduce claritate.</p>
+                    </div>
+                </div>
+
+                <!-- Zodia Scorpion -->
+                <div class="zodie-card">
+                    <img src="images/zodie-scorpion.jpg" alt="Scorpion">
+                    <h3>Scorpion</h3>
+                    <input type="checkbox" id="reveal-scorpion" class="horoscope-toggle-checkbox">
+                    <label for="reveal-scorpion" class="horoscope-toggle-label button-link">Află Mesajul</label>
+                    <div class="horoscope-message">
+                        <p>Misterele te atrag. Este o zi potrivită pentru cercetare și descoperirea unor adevăruri ascunse. Ai încredere în instinctele tale.</p>
+                    </div>
+                </div>
+
+                <!-- Zodia Săgetător -->
+                <div class="zodie-card">
+                    <img src="images/zodie-sagetator.jpg" alt="Săgetător">
+                    <h3>Săgetător</h3>
+                    <input type="checkbox" id="reveal-sagetator" class="horoscope-toggle-checkbox">
+                    <label for="reveal-sagetator" class="horoscope-toggle-label button-link">Află Mesajul</label>
+                    <div class="horoscope-message">
+                        <p>Setea de aventură este puternică. Planifică o escapadă sau învață ceva nou. Optimismul tău este contagios.</p>
+                    </div>
+                </div>
+
+                <!-- Zodia Capricorn -->
+                <div class="zodie-card">
+                    <img src="images/zodie-capricorn.jpg" alt="Capricorn">
+                    <h3>Capricorn</h3>
+                    <input type="checkbox" id="reveal-capricorn" class="horoscope-toggle-checkbox">
+                    <label for="reveal-capricorn" class="horoscope-toggle-label button-link">Află Mesajul</label>
+                    <div class="horoscope-message">
+                        <p>Focus pe carieră și obiective pe termen lung. Munca ta asiduă începe să dea roade. Fii perseverent și disciplinat.</p>
+                    </div>
+                </div>
+
+                <!-- Zodia Vărsător -->
+                <div class="zodie-card">
+                    <img src="images/zodie-varsator.jpg" alt="Vărsător">
+                    <h3>Vărsător</h3>
+                    <input type="checkbox" id="reveal-varsator" class="horoscope-toggle-checkbox">
+                    <label for="reveal-varsator" class="horoscope-toggle-label button-link">Află Mesajul</label>
+                    <div class="horoscope-message">
+                        <p>Ideile tale inovatoare pot inspira pe alții. Conectează-te cu prietenii și împărtășește-ți viziunile. Originalitatea este apreciată.</p>
+                    </div>
+                </div>
+
+                <!-- Zodia Pești -->
+                <div class="zodie-card">
+                    <img src="images/zodie-pesti.jpg" alt="Pești">
+                    <h3>Pești</h3>
+                    <input type="checkbox" id="reveal-pesti" class="horoscope-toggle-checkbox">
+                    <label for="reveal-pesti" class="horoscope-toggle-label button-link">Află Mesajul</label>
+                    <div class="horoscope-message">
+                        <p>Sensibilitatea ta este accentuată. Ascultă-ți intuiția și acordă timp viselor tale. Arta și muzica îți pot aduce alinare.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Arcantia - Librărie Esoterică. Toate drepturile rezervate.</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

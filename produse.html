@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcantia - Produse</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Georgia&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1 class="site-title">Arcantia</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Acasă</a></li>
+                <li><a href="produse.html">Produse</a></li>
+                <li><a href="horoscop.html">Horoscop</a></li>
+                <li><a href="citirea_zilei.html">Citirea Zilei</a></li>
+                <li><a href="despre_noi.html">Despre Noi</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cos.html">Coș (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Colecția Noastră de Cărți Esoterice</h2>
+            <div id="produse-list-container">
+                <!-- Produsele vor fi incarcate aici de scriptul de mai jos -->
+                <p>Se încarcă produsele...</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Arcantia - Librărie Esoterică. Toate drepturile rezervate.</p>
+    </footer>
+
+    <!-- Scriptul global (contine addToCart, updateCartCount etc., dar nu functiile de generare ID/imagine pentru acest script inline) -->
+    <script src="js/script.js"></script> 
+    
+    <!-- Scriptul specific pentru incarcarea produselor pe aceasta pagina (AUTONOM) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Functii ajutatoare definite LOCAL pentru acest script
+            function generateLocalProductId(titlu) { 
+                if (!titlu) return 'produs-necunoscut';
+                return titlu.toLowerCase().replace(/[^\w\s]/gi, '').replace(/\s+/g, '-');
+            }
+            function getLocalProductImageName(titlu) {
+                const id = generateLocalProductId(titlu);
+                return `carte-${id}.jpg`; 
+            }
+
+            fetch('proiect.xml') // Asigura-te ca 'proiect.xml' este la radacina proiectului
+              .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Eroare HTTP! Status: ${response.status} - ${response.statusText}. Verificați calea către proiect.xml.`);
+                }
+                return response.text();
+              })
+              .then(xmlText => {
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xmlText, "application/xml");
+                
+                const errorNode = xmlDoc.querySelector('parsererror');
+                if (errorNode) {
+                    console.error('Eroare la parsarea XML:', errorNode.textContent);
+                    throw new Error('Fișierul XML nu a putut fi parsat corect. Verificați sintaxa în proiect.xml.');
+                }
+
+                const produse = xmlDoc.getElementsByTagName("carte");
+                const container = document.getElementById("produse-list-container");
+                
+                if (!container) {
+                    console.error("Containerul cu ID-ul 'produse-list-container' nu a fost găsit.");
+                    return;
+                }
+                container.innerHTML = ''; 
+
+                if (produse.length === 0) {
+                    container.innerHTML = "<p>Nu există produse disponibile momentan în fișierul XML.</p>";
+                    return;
+                }
+
+                for (let i = 0; i < produse.length; i++) {
+                  const carte = produse[i];
+                  const titluNode = carte.getElementsByTagName("titlu")[0];
+                  const autorNode = carte.getElementsByTagName("autor")[0];
+                  const genNode = carte.getElementsByTagName("gen")[0];
+                  const anNode = carte.getElementsByTagName("an")[0];
+                  const stocNode = carte.getElementsByTagName("stoc")[0];
+                  const pretNode = carte.getElementsByTagName("pret")[0];
+
+                  if (!titluNode || !autorNode || !genNode || !anNode || !stocNode || !pretNode) {
+                      console.warn("O carte din XML este incompletă și va fi omisă:", carte.innerHTML);
+                      continue; 
+                  }
+
+                  const titlu = titluNode.textContent;
+                  const autor = autorNode.textContent;
+                  const gen = genNode.textContent;
+                  const an = anNode.textContent;
+                  const stoc = parseInt(stocNode.textContent, 10);
+                  const pret = parseFloat(pretNode.textContent).toFixed(2);
+                  
+                  // Folosim functiile locale
+                  const produsId = generateLocalProductId(titlu); 
+                  const imagineNume = getLocalProductImageName(titlu);
+                  const titluEscapat = titlu.replace(/'/g, "\\'"); // Pentru a evita probleme in stringul HTML din onclick
+
+                  const card = document.createElement('div');
+                  card.classList.add('produs-card');
+                  // Butonul addToCart va apela functia globala din js/script.js
+                  card.innerHTML = `
+                    <img src="images/${imagineNume}" alt="${titlu}" onerror="this.onerror=null;this.src='images/default-book-cover.jpg';">
+                    <div class="produs-card-content">
+                        <div>
+                            <h3>${titlu}</h3>
+                            <p><strong>Autor:</strong> ${autor}</p>
+                            <p><strong>Gen:</strong> ${gen}</p>
+                            <p><strong>An:</strong> ${an}</p>
+                            <p><strong>Stoc:</strong> ${stoc > 0 ? stoc + ' buc.' : 'Stoc epuizat'}</p>
+                            <p class="pret">${pret} RON</p>
+                        </div>
+                        <button onclick="addToCart('${produsId}', '${titluEscapat}', ${pret}, '${imagineNume}')" ${stoc <= 0 ? 'disabled' : ''}>
+                            ${stoc > 0 ? 'Adaugă în coș' : 'Indisponibil'}
+                        </button>
+                    </div>
+                  `;
+                  container.appendChild(card);
+                }
+              })
+              .catch(error => {
+                console.error("Eroare la preluarea sau procesarea produselor:", error);
+                const container = document.getElementById("produse-list-container");
+                if (container) {
+                    container.innerHTML = `<p style="color: red; font-weight: bold;">Produsele nu pot fi afișate. <br> Motiv: ${error.message}</p> <p>Verificați consola (F12).</p>`;
+                }
+              });
+        });
+    </script>
+</body>
+</html>

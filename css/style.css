@@ -1,0 +1,633 @@
+/* General Styles */
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1d0f2b; /* Mov foarte închis, aproape negru-violet */
+    color: #f0e6ff; /* Lila foarte deschis, aproape alb */
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #3b1f55; /* Mov prună închis */
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(190, 120, 255, 0.35); /* Umbră mov vibrant */
+}
+
+h1, h2, h3 {
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+h1.site-title { /* Stil specific pentru titlul site-ului din header */
+    color: #e68fff; 
+    text-shadow: 0 0 10px rgba(230, 143, 255, 0.9), 
+                 0 0 15px rgba(230, 143, 255, 0.7), 
+                 2px 2px 5px rgba(0,0,0,0.7);
+    font-size: 3.5em;
+    margin-top: 0; /* Ajustat, padding-ul header-ului va da spatiu */
+    margin-bottom: 10px; /* Spatiu intre titlu si nav */
+    position: relative; 
+    z-index: 2;
+}
+
+h2 { /* Stil general pentru H2 */
+    color: #c57eff; 
+}
+
+h3 { /* Stil general pentru H3 */
+    color: #ae63ff; 
+}
+
+a {
+    color: #ab87ff; 
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #e68fff; 
+    text-decoration: underline;
+}
+
+button, .button-link {
+    background: linear-gradient(135deg, #9d4edd, #7b2cbf); 
+    color: #ffffff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.05em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    text-decoration: none;
+    display: inline-block;
+}
+
+button:hover, .button-link:hover {
+    background: linear-gradient(135deg, #7b2cbf, #9d4edd);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 6px 15px rgba(157, 78, 221, 0.5);
+}
+
+/* Header & Navigation */
+header {
+    padding-top: 40px; /* Spatiu pentru vizibilitatea GIF-ului deasupra titlului */
+    padding-bottom: 20px; /* Spatiu sub navigatie, inainte de continutul principal */
+    background-image: url('../images/header-cosmos-bg.gif'); /* GIF-ul tau cosmic */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat; /* De obicei GIF-urile sunt facute sa loopeze, nu sa se repete ca tile */
+    position: relative; /* Pentru overlay si z-index */
+    text-align: center;
+}
+
+header::before { /* Overlay pentru lizibilitatea textului peste GIF */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(29, 15, 43, 0.4); /* Mov inchis semi-transparent, ajusteaza opacitatea (0.4) */
+    z-index: 1; /* Sub text, peste imaginea de fundal a header-ului */
+}
+
+nav {
+    background-color: rgba(40, 20, 60, 0.8); /* Fundalul navigatiei */
+    backdrop-filter: blur(5px); /* Efect de sticla mata (optional) */
+    padding: 18px 0;
+    /* margin-bottom este acum controlat de padding-bottom al header-ului */
+    border-radius: 8px;
+    position: relative; /* Pentru a fi deasupra overlay-ului header-ului */
+    z-index: 2;
+    width: 90%; /* Latime pentru navigatie */
+    max-width: 900px; /* Latime maxima pentru navigatie */
+    margin-left: auto; /* Centrare navigatie */
+    margin-right: auto; /* Centrare navigatie */
+    margin-top: 10px; /* Spatiu mic intre titlu si nav */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px; /* Spatiere ajustata pentru nav mai ingust */
+}
+
+nav ul li a {
+    color: #e0cffc;
+    font-weight: bold;
+    font-size: 1.1em; /* Font usor redus pentru nav mai ingust */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 5px #e68fff;
+}
+
+/* Swiper Styles */
+.swiper-container {
+    width: 100%;
+    max-width: 1100px;
+    height: 480px;
+    margin: 25px auto 30px auto; /* Spatiu deasupra swiper-ului, dupa header */
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    border: 3px solid rgba(157, 78, 221, 0.5);
+}
+
+.swiper-slide {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    
+    background-image: url('../images/swiper-bg-cosmos.gif'); /* Fundal GIF pentru Swiper */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 20px 30px; 
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box; 
+}
+
+.swiper-slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(40, 20, 60, 0.65); 
+    z-index: -1; 
+}
+
+.swiper-slide h2 {
+    font-size: 3em;
+    margin-top: 0; 
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(230, 143, 255, 0.8), 2px 2px 6px rgba(0,0,0,0.8);
+}
+
+.swiper-slide p {
+    font-size: 1.4em;
+    max-width: 700px; 
+    margin-top: 0; 
+    margin-bottom: 30px; 
+    line-height: 1.6;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.9);
+    text-align: center !important; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.swiper-slide .button-link {
+    margin-top: 10px; 
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: #e68fff !important;
+    transform: scale(1.2);
+}
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    color: #ffffff !important;
+}
+
+.swiper-pagination-bullet {
+    background: rgba(255,255,255,0.5) !important;
+    width: 10px !important;
+    height: 10px !important;
+    opacity: 0.7 !important;
+}
+.swiper-pagination-bullet-active {
+    background: #e68fff !important;
+    opacity: 1 !important;
+    width: 12px !important;
+    height: 12px !important;
+}
+
+/* Products Section (Carduri) */
+#produse-list-container, #recomandate-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.produs-card {
+    background-color: #4c2a6c; 
+    border: 2px solid #7b2cbf; 
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+}
+
+.produs-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(190, 120, 255, 0.5);
+}
+
+.produs-card img {
+    max-width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    align-self: center; 
+}
+
+.produs-card-content {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.produs-card h3 { /* Titlurile de produse in carduri */
+    font-size: 1.6em;
+    margin: 12px 0 8px 0; 
+    color: #e0cffc;
+}
+
+.produs-card p { /* Paragrafele din cardurile de produse */
+    font-size: 1em;
+    margin: 4px 0; 
+    color: #d8c0f7;
+    text-align: center; 
+}
+.produs-card .pret {
+    font-weight: bold;
+    color: #e68fff; 
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Articole Relevante */
+.articole-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+.articol-card {
+    background-color: #4c2a6c;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #7b2cbf;
+    display: flex;
+    flex-direction: column;
+}
+.articol-card img { 
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+.articol-card h3 { /* Titlurile articolelor */
+    color: #e68fff;
+    margin-bottom: 10px;
+}
+.articol-card p { /* Paragrafele din articole */
+    color: #d8c0f7;
+    line-height: 1.6;
+    flex-grow: 1; 
+    margin-bottom: 15px;
+    text-align: left; 
+}
+.articol-card a {
+    color: #c57eff;
+    font-weight: bold;
+    align-self: flex-start; 
+}
+.articol-card a:hover {
+    color: #e68fff;
+}
+
+/* Horoscop Page */
+.zodiac-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.zodie-card {
+    background-color: #4c2a6c;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #7b2cbf;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.zodie-card:hover {
+    transform: scale(1.05);
+}
+
+.zodie-card img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid #9d4edd;
+    box-shadow: 0 0 10px rgba(157, 78, 221, 0.5);
+}
+.zodie-card h3 { /* Titlurile zodiilor */
+    color: #e0cffc;
+    margin-bottom: 10px; 
+}
+
+/* Stiluri pentru Checkbox Hack - Horoscop */
+.horoscope-toggle-checkbox {
+    display: none; 
+}
+
+.horoscope-toggle-label {
+    margin-top: 0; 
+    margin-bottom: 15px;
+    padding: 8px 20px;
+    font-size: 0.9em;
+    cursor: pointer;
+    user-select: none;
+    display: inline-block;
+    text-align: center;
+    background: linear-gradient(135deg, #ae63ff, #8a50c7); 
+    /* Mosteneste stilurile .button-link, dar putem suprascrie aici daca e nevoie */
+}
+
+.horoscope-toggle-label:hover {
+    background: linear-gradient(135deg, #8a50c7, #ae63ff);
+}
+
+.horoscope-message {
+    display: block; 
+    width: 100%;
+    text-align: left;
+    margin-top: 0;
+    background-color: rgba(29, 15, 43, 0.6); 
+    border-radius: 5px;
+    border-top: 2px solid #7b2cbf; 
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding-top 0.4s ease-out, padding-bottom 0.4s ease-out, opacity 0.5s ease-out;
+    opacity: 0;
+    padding-top: 0; 
+    padding-bottom: 0;
+    padding-left: 15px; 
+    padding-right: 15px;
+    box-sizing: border-box; 
+}
+
+.horoscope-message p { /* Paragrafele din mesajele horoscopului */
+    color: #e0cffc;
+    font-size: 0.95em;
+    line-height: 1.7;
+    margin: 0;
+    text-align: left; /* Asiguram alinierea la stanga pentru mesaj */
+}
+
+.horoscope-toggle-checkbox:checked + .horoscope-toggle-label {
+    background: linear-gradient(135deg, #7b2cbf, #5c3b80); 
+}
+
+.horoscope-toggle-checkbox:checked + .horoscope-toggle-label + .horoscope-message {
+    max-height: 250px; 
+    opacity: 1;
+    padding-top: 15px; 
+    padding-bottom: 15px;
+}
+
+
+/* Citirea Zilei Page */
+#tarot-card-display {
+    margin-top: 30px;
+    padding: 30px;
+    background-color: #4c2a6c;
+    border-radius: 10px;
+    border: 2px solid #7b2cbf;
+    min-height: 400px;
+    display: none; 
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(157, 78, 221, 0.4);
+}
+
+#tarot-card-display img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 4px solid #9d4edd;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+#tarot-card-display h3 { /* Titlul cartii de tarot */
+    color: #e68fff;
+    font-size: 1.8em;
+}
+#tarot-card-display p { /* Interpretarea cartii de tarot */
+    color: #d8c0f7;
+    line-height: 1.7;
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Despre Noi Page */
+.despre-continut {
+    text-align: left;
+    line-height: 1.9;
+    color: #f0e6ff;
+    font-size: 1.1em;
+}
+.despre-imagini {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+.despre-imagini img {
+    width: 100%; 
+    max-height: 350px; 
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(190, 120, 255, 0.4);
+    border: 3px solid #7b2cbf;
+    transition: transform 0.3s ease;
+}
+.despre-imagini img:hover {
+    transform: scale(1.03);
+}
+
+/* Contact Page */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    justify-content: space-between;
+}
+.form-container, .map-container {
+    flex: 1;
+    min-width: 320px;
+    background-color: #4c2a6c;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #7b2cbf;
+}
+.form-container h3, .map-container h3 { /* Titlurile din sectiunile contact */
+    margin-top: 0;
+}
+.form-container form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #e0cffc;
+    text-align: left;
+    font-weight: bold;
+}
+.form-container form input,
+.form-container form textarea {
+    width: calc(100% - 26px);
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 2px solid #6a3ea1;
+    background-color: #3b1f55;
+    color: #f0e6ff;
+    font-size: 1em;
+}
+.form-container form input:focus,
+.form-container form textarea:focus {
+    border-color: #9d4edd;
+    outline: none;
+    box-shadow: 0 0 10px rgba(157, 78, 221, 0.6);
+}
+.map-container iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: 8px;
+    filter: grayscale(30%) hue-rotate(280deg) brightness(0.9);
+}
+
+/* Cos Page */
+#cos-items {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+    font-size: 1.05em;
+}
+#cos-items th, #cos-items td {
+    border: 1px solid #7b2cbf;
+    padding: 14px;
+    text-align: left;
+    vertical-align: middle;
+}
+#cos-items th {
+    background-color: #4c2a6c;
+    color: #e68fff;
+    text-transform: uppercase;
+}
+#cos-items td img.cart-item-image { 
+    width: 60px;
+    height: 90px; 
+    object-fit: cover;
+    margin-right: 12px;
+    border-radius: 4px;
+    border: 1px solid #6a3ea1;
+}
+#cos-items .item-quantity input {
+    width: 55px;
+    padding: 8px;
+    text-align: center;
+    background-color: #3b1f55;
+    color: #f0e6ff;
+    border: 1px solid #6a3ea1;
+    border-radius: 4px;
+}
+#cos-summary {
+    text-align: right;
+    font-size: 1.25em;
+    color: #e0cffc;
+    margin-top: 20px;
+}
+#cos-summary p { margin: 12px 0; }
+#cos-summary h3 { color: #e68fff; font-size: 1.5em; }
+
+.checkout-button-container {
+    text-align: right;
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    padding: 30px;
+    background: linear-gradient(to right, #1d0f2b, #301948);
+    color: #c57eff;
+    font-size: 0.95em;
+    border-top: 2px solid #7b2cbf;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .swiper-container {
+        max-width: 90%;
+    }
+    nav ul li {
+        margin: 0 10px; /* Reducem spatierea in nav pe ecrane medii */
+    }
+}
+@media (max-width: 768px) {
+    .site-title { font-size: 2.8em; }
+    nav { width: 100%; border-radius: 0; } /* Navigatia ocupa toata latimea */
+    nav ul li { display: block; margin: 12px 0; }
+    .swiper-slide h2 { font-size: 2.4em; }
+    .swiper-slide p { font-size: 1.2em; }
+    .swiper-container { height: 420px; margin-top: 0; border-radius: 0; border-left:none; border-right: none;}
+    .zodiac-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    #produse-list-container, #recomandate-container, .articole-container {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .contact-container { flex-direction: column; }
+    .despre-imagini { grid-template-columns: 1fr; } 
+    .despre-imagini img { max-height: 250px; }
+}
+
+@media (max-width: 480px) {
+    .site-title { font-size: 2.2em; }
+    .swiper-slide h2 { font-size: 1.8em; }
+    .swiper-slide p { font-size: 1em; max-width: 90%; }
+    .swiper-container { height: 380px; }
+    #produse-list-container, #recomandate-container, .articole-container, .zodiac-grid {
+        grid-template-columns: 1fr;
+    }
+    button, .button-link, .horoscope-toggle-label { padding: 10px 20px; font-size: 0.95em; }
+    .produs-card img { height: 200px; }
+    nav ul li a { font-size: 1em; }
+}
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Georgia&display=swap');
